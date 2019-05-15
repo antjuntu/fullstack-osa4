@@ -2,8 +2,8 @@ POST http://localhost:3001/api/blogs
 Content-Type: application/json
 
 {
-  "title": "On disjoint binary numbers",
-  "author": "Edsger W. Dijkstra",
-  "url": "https://www.cs.utexas.edu/~EWD/transcriptions/EWD13xx/EWD1312.html",
+  "title": "Test",
+  "author": "Teppo Testaaja",
+  "url": "https://www.testi.fi",
   "likes": 6
 }
