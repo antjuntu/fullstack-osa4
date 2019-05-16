@@ -54,3 +54,32 @@ describe('favorite blog', () => {
     })
   })
 })
+
+describe('most blogs', () => {
+  const listWithOneBlog = []
+  listWithOneBlog[0] = blogs[0]
+
+  test('of empty list is undefined', () => {
+    const result = listHelper.mostBlogs([])
+
+    expect(result).toBeUndefined()
+  })
+
+  test('when there is only one blog is calculated right', () => {
+    const result = listHelper.mostBlogs(listWithOneBlog)
+
+    expect(result).toEqual({
+      author: 'Michael Chan',
+      blogs: 1
+    })
+  })
+
+  test('when there is many blogs is calculated right', () => {
+    const result = listHelper.mostBlogs(blogs)
+
+    expect(result).toEqual({
+      author: 'Robert C. Martin',
+      blogs: 3
+    })
+  })
+})
