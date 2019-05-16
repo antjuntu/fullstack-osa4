@@ -23,3 +23,34 @@ describe('total likes', () => {
     expect(result).toBe(7 + 5 + 12 + 10 + 0 + 2)
   })
 })
+
+describe('favorite blog', () => {
+  const listWithOneBlog = []
+  listWithOneBlog[0] = blogs[0]
+
+  test('of empty list is undefined', () => {
+    const result = listHelper.favoriteBlog([])
+
+    expect(result).toBeUndefined()
+  })
+
+  test('when there is only one blog is calculated right', () => {
+    const result = listHelper.favoriteBlog(listWithOneBlog)
+
+    expect(result).toEqual({
+      title: 'React patterns',
+      author: 'Michael Chan',
+      likes: 7
+    })
+  })
+
+  test('when there is many blogs is calculated right', () => {
+    const result = listHelper.favoriteBlog(blogs)
+
+    expect(result).toEqual({
+      title: 'Canonical string reduction',
+      author: 'Edsger W. Dijkstra',
+      likes: 12
+    })
+  })
+})
