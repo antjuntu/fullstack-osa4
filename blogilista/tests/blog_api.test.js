@@ -70,6 +70,27 @@ test('a valid blog can be added', async () => {
   )
 })
 
+test('likes is set to zero if missing', async () => {
+  const newBlog = {
+    title: 'First class tests',
+    author: 'Robert C. Martin',
+    url: 'http://blog.cleancoder.com/uncle-bob/2017/05/05/TestDefinitions.html'
+  }
+
+  const response = await api
+    .post('/api/blogs')
+    .send(newBlog)
+    .expect(201)
+    .expect('Content-Type', /application\/json/)
+
+  const blogsAtEnd = await helper.blogsInDb()
+  expect(blogsAtEnd.length).toBe(helper.initialBlogs.length + 1)
+
+  const savedBlog = blogsAtEnd.find(blog => blog.id === response.body.id)
+  expect(savedBlog.likes).toBeDefined()
+  expect(savedBlog.likes).toBe(0)
+})
+
 afterAll(() => {
   mongoose.connection.close()
 })
