@@ -22,6 +22,7 @@ mongoose.connect(config.mongoUrl, { useNewUrlParser: true, useFindAndModify: fal
 
 app.use(cors())
 app.use(bodyParser.json())
+app.use(middleware.tokenExtractor)
 app.use(middleware.requestLogger)
 
 app.use('/api/blogs', blogsRouter)
