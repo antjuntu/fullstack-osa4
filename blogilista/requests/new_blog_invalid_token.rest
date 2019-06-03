@@ -1,6 +1,6 @@
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjVjZjUwMjNhYmE2OWM5Mzc1NGQ2ZGViYSIsImlhdCI6MTU1OTU2MTU0OH0.uQmjYJHTf2_1SkXzl_zVQaEbY5ZuDXV7E6gmzsKDbJo
+Authorization: Bearer XeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3QiLCJpZCI6IjVjZjUwMjNhYmE2OWM5Mzc1NGQ2ZGViYSIsImlhdCI6MTU1OTU2MTU0OH0.uQmjYJHTf2_1SkXzl_zVQaEbY5ZuDXV7E6gmzsKDbJo
 
 {
   "title": "Kirjautunut käyttäjä lisää blogin",
